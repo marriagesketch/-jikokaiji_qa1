@@ -2,7 +2,7 @@
    婚活自己開示QA Part1 – app.js
    ============================================================ */
 
-const LIFF_ID   = "2010597175";
+const LIFF_ID   = "2010597175-JSyn68Zk";
 const DRAFT_KEY = "konkatsu_qa_draft";
 
 /* Part2への案内メッセージ（送信＆共有完了後にトーク画面へ送信） */
