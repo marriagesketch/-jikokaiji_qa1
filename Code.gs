@@ -86,8 +86,8 @@ function getSpreadsheet() {
    ・cipherText はクライアント側で AES-GCM 暗号化済みのため、
      このサーバー（および管理者）は復号鍵を一切受け取らない。
    ・同じ ownerHash（同一LINEアカウント）から再度共有された場合、
-     以前の Shares 行は revoked にし、Analytics 側の古い行は削除
-     したうえで新しい行を追加する（＝上書き）。
+     Shares・Analytics いずれも以前の行を削除したうえで新しい行を
+     追加する（＝完全上書き。1人1行に統一される）。
    ------------------------------------------------------------ */
 function handleShare(body) {
   var id         = body.id;
@@ -107,7 +107,7 @@ function handleShare(body) {
     var analyticsSheet = ss.getSheetByName(ANALYTICS_SHEET);
     var now = new Date();
 
-    revokePreviousShares(sharesSheet, ownerHash, now);
+    removePreviousShares(sharesSheet, ownerHash);
     removePreviousAnalytics(analyticsSheet, ownerHash);
 
     sharesSheet.appendRow([
@@ -131,16 +131,14 @@ function handleShare(body) {
   }
 }
 
-/* 同じ ownerHash の既存 Shares 行を revoked にする（論理削除） */
-function revokePreviousShares(sheet, ownerHash, now) {
+/* 同じ ownerHash の既存 Shares 行を削除する（完全上書き・1人1行に統一） */
+function removePreviousShares(sheet, ownerHash) {
   var lastRow = sheet.getLastRow();
   if (lastRow < DATA_START_ROW) return;
-  var values = sheet.getRange(DATA_START_ROW, 1, lastRow - DATA_START_ROW + 1, COL.VIEW_COUNT).getValues();
-  for (var i = 0; i < values.length; i++) {
-    if (values[i][COL.OWNER_HASH - 1] === ownerHash && values[i][COL.STATUS - 1] === 'active') {
-      var row = DATA_START_ROW + i;
-      sheet.getRange(row, COL.STATUS).setValue('revoked');
-      sheet.getRange(row, COL.UPDATED_AT).setValue(now);
+  var values = sheet.getRange(DATA_START_ROW, 1, lastRow - DATA_START_ROW + 1, COL.OWNER_HASH).getValues();
+  for (var i = values.length - 1; i >= 0; i--) {
+    if (values[i][COL.OWNER_HASH - 1] === ownerHash) {
+      sheet.deleteRow(DATA_START_ROW + i);
     }
   }
 }
