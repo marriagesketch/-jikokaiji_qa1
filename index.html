@@ -278,51 +278,61 @@
 
   <input type="range" id="q9" min="1" max="5" step="1">
 
-  <!-- Q10 -->
-  <label>Q10 部活動、サークル活動は何をしていましたか？</label>
-  <textarea id="q10"></textarea>
+<!-- Q10 -->
+  <label>Q10 慎重に決めるタイプですか？思い切りがいいタイプですか？</label>
+
+  <div class="slider-labels">
+    <span>慎重</span>
+    <span>思い切りがいい</span>
+  </div>
+
+  <input type="range" id="q10" min="1" max="5" step="1">
 
   <!-- Q11 -->
-  <label>Q11 どんなバイトをしたことがありますか？</label>
-  <textarea id="q11"></textarea>
+  <label>Q11 部活動、サークル活動は何をしていましたか？</label>
+  <textarea id="q11-1"></textarea>
 
   <!-- Q12 -->
-  <label>
-    Q12 休みの日に友人や家族と会うことはありますか？
-    ある場合はどんなことをすることが多いですか？
-  </label>
-  <textarea id="q12"></textarea>
+  <label>Q12 どんなバイトをしたことがありますか？</label>
+  <textarea id="q12-1"></textarea>
 
   <!-- Q13 -->
   <label>
-    Q13 1人で過ごす時の休みの日の過ごし方を教えてください。
+    Q13 休みの日に友人や家族と会うことはありますか？
+    ある場合はどんなことをすることが多いですか？
   </label>
-  <textarea id="q13"></textarea>
+  <textarea id="q13-1"></textarea>
 
   <!-- Q14 -->
-  <label>Q14 LINEの頻度はどれくらいが理想ですか？</label>
+  <label>
+    Q14 1人で過ごす時の休みの日の過ごし方を教えてください。
+  </label>
+  <textarea id="q14-1"></textarea>
+
+  <!-- Q15 -->
+  <label>Q15 LINEの頻度はどれくらいが理想ですか？</label>
 
 <label> デートなど相談事項の予定調整、返信までどれくらいなら待てますか？<br>
 1ヶ月後に記念日があり、前後でデートをしようと話しています。具体的なお店や日時をLINEで相談中です。予約がすぐ埋まってしまうわけでもなく、まだ日程には余裕があるという前提です。この内容について返信までどれぐらいなら待てるか答えてください。</label>
 
   <label>
-    <input type="radio" name="q14-1" value="a14-1-1">
+    <input type="radio" name="q15-1" value="a15-1-1">
     返信まで6時間以内（朝LINEしたら昼までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-1" value="a14-1-2">
+    <input type="radio" name="q15-1" value="a15-1-2">
     返信まで12時間以内（朝LINEしたら夜までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-1" value="a14-1-3">
+    <input type="radio" name="q15-1" value="a15-1-3">
     返信まで24時間以内（朝LINEしたら翌朝までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-1" value="a14-1-4">
+    <input type="radio" name="q15-1" value="a15-1-4">
     返信まで3日以内
   </label>
   <label>
-    <input type="radio" name="q14-1" value="a14-1-5">
+    <input type="radio" name="q15-1" value="a15-1-5">
     3日以上でも日程に余裕があれば待てる
   </label>
   <label>
@@ -330,37 +340,37 @@
 <label>デートの予定など相談事項ではなく、雑談LINEについてどのぐらいの頻度でLINEしたいか教えてください。</label>
 
 <label>
-    <input type="radio" name="q14-2" value="a14-2-1">
+    <input type="radio" name="q15-2" value="a15-2-1">
     返信まで6時間以内（朝LINEしたら昼までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-2">
+    <input type="radio" name="q15-2" value="a15-2-2">
     返信まで12時間以内（朝LINEしたら夜までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-3">
+    <input type="radio" name="q15-2" value="a15-2-3">
     返信まで24時間以内（朝LINEしたら翌朝までには返してほしい）
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-4">
+    <input type="radio" name="q15-2" value="a15-2-4">
     返信まで3日以内
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-5">
+    <input type="radio" name="q15-2" value="a15-2-5">
     雑談LINEには返信はあってもなくてもよい
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-6">
+    <input type="radio" name="q15-2" value="a15-2-6">
     雑談LINEは自分は送らないが相手から送られる分には気にしない
   </label>
   <label>
-    <input type="radio" name="q14-2" value="a14-2-7">
+    <input type="radio" name="q15-2" value="a15-2-7">
     雑談LINEは送りたくないし送られるのも好きじゃない
   </label>
 
-  <!-- Q15 -->
-  <label>Q15 今後デートで行きたいところはありますか？</label>
-  <textarea id="q15"></textarea>
+  <!-- Q16 -->
+  <label>Q16 今後デートで行きたいところはありますか？</label>
+  <textarea id="q16"></textarea>
 
   <div class="button-group">
     <button id="submitBtn" type="button">送信</button>
