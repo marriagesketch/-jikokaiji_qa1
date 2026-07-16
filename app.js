@@ -439,7 +439,7 @@ function escapeHTML(str) {
    共有URLは「id＋鍵」のみで構成される短いリンクになるため、
    ボタン(uriアクション)の1000文字制限に達することはほぼない。
    ------------------------------------------------------------ */
-const HEADER_IMAGE_URL = "https://liffdevelop31257014-gif.github.io/-jikokaiji_qa1/image_message.jpg";
+const HEADER_IMAGE_URL = "https://marriagesketch  .github.io/-jikokaiji_qa1/image_message.jpg";
 
 function buildShareFlexMessage(shareName, shareURL) {
   const nameLine = shareName ? `${shareName}さんの回答が届きました` : "回答が届きました";
